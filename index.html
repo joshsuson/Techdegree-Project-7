@@ -6,12 +6,13 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/toggle-switch.css">
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/0563c194c2.js" crossorigin="anonymous"></script>
   </head>
-  <body>
+  <body class="grid-container">
     <header>
-      <h1>YourApp</h1>
-      <div class="bell">
-        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+      <h1>Your<span>App<sup>TM</sup><span></h1>
+      <div class="bell-container">
+        <svg class="bell" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
           <style type="text/css">
           	.st0{fill:#FFFFFF;}
@@ -23,8 +24,9 @@
           	</g>
           </g>
         </svg>
+        <div class="new-notification"></div>
         <div id="notifications">
-
+          <!-- Notifications will populate here -->
         </div>
       </div>
       <img src="images/profilepic.jpg" alt="A portrait picture of myself, Josh Suson" class="profile-image">
@@ -32,16 +34,16 @@
     </header>
     <nav>
       <a href="#">
-        <img src="icons/icon-dashboard.svg" alt="A Dashboard Icon">
+        <img src="icons/icon-dashboard.svg" alt="A Dashboard Icon" class="nav-icon">
       </a>
       <a href="#">
-        <img src="icons/icon-members.svg" alt="A Members Icon">
+        <img src="icons/icon-members.svg" alt="A Members Icon" class="nav-icon">
       </a>
       <a href="#">
-        <img src="icons/icon-visits.svg" alt="A Visits Stats Icon">
+        <img src="icons/icon-visits.svg" alt="A Visits Stats Icon" class="nav-icon">
       </a>
       <a href="#">
-        <img src="icons/icon-settings.svg" alt="A Settings Icon">
+        <img src="icons/icon-settings.svg" alt="A Settings Icon" class="nav-icon">
       </a>
     </nav>
     <main>
@@ -51,6 +53,7 @@
         <h2>Dashboard</h2>
         <div class="main-header-search">
           <input type="Search" placeholder="Search">
+          <span class="fas fa-search fa-lg" id="magnify-glass"></span>
         </div>
       </div>
 
@@ -62,23 +65,23 @@
       <!-- Chart Area -->
       <section class="traffic">
         <div class="traffic-header">
-          <h3>Traffic</h3>
+          <h3 class="section-title">Traffic</h3>
           <ul class="traffic-nav">
             <li class="traffic-nav-link">Hourly</li>
             <li class="traffic-nav-link">Daily</li>
             <li class="traffic-nav-link active">Weekly</li>
             <li class="traffic-nav-link">Monthly</li>
           </ul>
+          </div>
           <div class="widget-container-full">
             <!-- element line graph will attach to -->
             <canvas id="traffic-chart"></canvas>
           </div>
-        </div>
       </section>
 
       <!-- Daily Traffic Bar Graph -->
       <section class="daily">
-        <h3>Daily Traffic</h3>
+        <h3 class="section-title">Daily Traffic</h3>
         <div class="widget-container-half">
           <!-- element bar graph will attach to -->
           <canvas id="daily-chart"></canvas>
@@ -87,7 +90,7 @@
 
       <!-- Mobile Users Pie Graph -->
       <section class="mobile-users">
-        <h3>Mobile User</h3>
+        <h3 class="section-title">Mobile Users</h3>
         <div class="widget-container-half">
           <!-- element pie chart will attach to -->
           <canvas id="mobile-pie"></canvas>
@@ -96,6 +99,8 @@
 
       <!-- Social Stats Section -->
       <div class="social-container">
+        <h3 class="section-title">Social Stats</h3>
+        <!-- Twitter -->
         <div class="social-image">
           <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
@@ -110,6 +115,7 @@
           <p>Twitter</p>
           <p>10,345</p>
         </div>
+        <!-- Facebook -->
         <div class="social-image">
           <svg enable-background="new 0 0 56.693 56.693" height="56.693px" id="Layer_1" version="1.1"
           viewBox="0 0 56.693 56.693" width="56.693px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -121,6 +127,7 @@
           <p>Facebook</p>
           <p>8,739</p>
         </div>
+        <!-- Google Plus -->
         <div class="social-image">
           <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           	 viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve">
@@ -150,7 +157,7 @@
 
       <!-- New Members Widget -->
       <section class="members">
-        <h3>New Members</h3>
+        <h3 class="section-title">New Members</h3>
         <div class="members-container">
           <img src="images/member-1.jpg" alt="Victoria's Profile Picture" class="profile-image">
           <div class="memebers-text">
@@ -190,8 +197,8 @@
       </section>
 
       <!-- Recent Activity Widget -->
-      <section class="members">
-        <h3>Recent Activity</h3>
+      <section class="activity">
+        <h3 class="section-title">Recent Activity</h3>
         <div class="members-container">
           <img src="images/member-1.jpg" alt="Victoria's Profile Picture" class="profile-image">
           <div class="memebers-text">
@@ -227,18 +234,21 @@
           </div>
           <p>1 day ago</p>
         </div>
+      </section>
 
         <!-- Messages Widget -->
         <section class="message">
-          <h3>Message User</h3>
+          <h3 class="section-title">Message User</h3>
           <form class="widget-container">
             <input type="text" placeholder="Search for User" class="form-field" id="userField">
             <textarea placeholder="Message for User" class="form-area" id="messageField"></textarea>
             <button class="button-primary" id="send">Send</button>
           </form>
+        </section>
 
           <!-- Settings Widget -->
           <section class="settings">
+            <h3 class="section-title">Settings</h3>
             <!-- Custom CSS Toggle Code -->
             <label class="switch-light switch-ios" onclick="">
               <input type="checkbox">
@@ -279,9 +289,6 @@
               <button class="button-disabled" id="cancel">Cancel</button>
             </div>
           </section>
-
-        </section>
-      </section>
     </main>
   </body>
 </html>
