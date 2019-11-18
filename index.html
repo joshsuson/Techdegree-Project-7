@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>YourApp Dashboard</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/toggle-switch.css">
+    <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
     <header>
@@ -225,6 +228,59 @@
           <p>1 day ago</p>
         </div>
 
+        <!-- Messages Widget -->
+        <section class="message">
+          <h3>Message User</h3>
+          <form class="widget-container">
+            <input type="text" placeholder="Search for User" class="form-field" id="userField">
+            <textarea placeholder="Message for User" class="form-area" id="messageField"></textarea>
+            <button class="button-primary" id="send">Send</button>
+          </form>
+
+          <!-- Settings Widget -->
+          <section class="settings">
+            <!-- Custom CSS Toggle Code -->
+            <label class="switch-light switch-ios" onclick="">
+              <input type="checkbox">
+
+              <strong>
+                Send E-mail Notifications
+              </strong>
+
+              <span>
+                <span>Off</span>
+                <span>On</span>
+                <a></a>
+              </span>
+            </label>
+            <!-- Custom CSS Toggle Code -->
+            <label class="switch-light switch-ios" onclick="">
+              <input type="checkbox">
+
+              <strong>
+                Set Profile to Public
+              </strong>
+
+              <span>
+                <span>Off</span>
+                <span>On</span>
+                <a></a>
+              </span>
+            </label>
+            <select class="form-field" id="timezone">
+              <option disabled selected>Select A Timezone</option>
+              <option>Eastern</option>
+              <option>Central</option>
+              <option>Moutain West</option>
+              <option>Pacific</option>
+            </select>
+            <div class="settings-button">
+              <button class="button-primary" id="save">Save</button>
+              <button class="button-disabled" id="cancel">Cancel</button>
+            </div>
+          </section>
+
+        </section>
       </section>
     </main>
   </body>
