@@ -6,13 +6,18 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 100%;
+  grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-template-areas:
   "header"
   "nav"
   "main";
 }
+
+.widget-container-full, .widget-container-half {
+  width: 95vw;
+}
+
 
 /* Header Styles */
 
@@ -56,6 +61,11 @@ header span {
   padding-right: 5px;
 }
 
+.bell:hover {
+  transform: rotate(20deg);
+  cursor: pointer;
+}
+
 .new-notification {
   background-color: #81c98f;
   height: 7px;
@@ -66,9 +76,37 @@ header span {
   right: 8px;
 }
 
+
 .profile-image {
   height: 35px;
   border-radius: 50%;
+}
+
+#notifications {
+  position: absolute;
+  background: #fff;
+  top: 7%;
+  right: -5%;
+  border: solid 1px #666;
+  z-index: 1000;
+}
+
+.notificationList {
+  padding: 15px;
+}
+
+.notificationText p {
+  color: #7479ba;
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: solid 1px #bbb;
+}
+
+.notificationText:last-child p {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 /* Nav Styles */
@@ -146,11 +184,39 @@ main {
   color: #7479ba;
 }
 
+/* Alert Styles */
+
+.alert {
+  padding: 15px;
+}
+
+.alert-banner {
+  background: #7479ba;
+  padding: 5px 15px;
+  color: #fff;
+  display: flex;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.alert-banner-close {
+  margin-left: auto;
+  text-transform: uppercase;
+}
+
+.alert-banner-close:hover {
+  cursor: pointer;
+}
+
 /* Traffic Styles */
+
+.traffic {
+  padding: 20px;
+}
 
 .traffic-header {
   display: flex;
-  padding: 10px 20px;
+  padding: 10px 0;
 }
 
 .traffic-nav {
@@ -184,7 +250,7 @@ main {
 }
 
 .daily, .mobile-users {
-  padding: 10px 20px;
+  padding: 20px 20px 35px 20px;
 }
 
 /* Social Stat Styles */
@@ -354,13 +420,14 @@ main {
   height: 40px;
   border-radius: 5px;
   text-indent: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 #messageField {
   height: 120px;
   padding: 10px;
   text-indent: 0;
+  margin-bottom: 27px;
 }
 
 #send {
@@ -370,6 +437,7 @@ main {
   width: 100%;
   color: #fff;
   text-transform: uppercase;
+  border: none;
 }
 
 /* Settings Styles */
@@ -413,6 +481,7 @@ main {
   margin-bottom: 15px;
   border-radius: 5px;
   color: #666;
+  margin-top: 10px;
 
 }
 
@@ -428,6 +497,7 @@ main {
   border-radius: 5px;
   color: #fff;
   text-transform: uppercase;
+  border: none;
 }
 
 #cancel {
@@ -438,7 +508,13 @@ main {
   color: #fff;
   text-transform: uppercase;
   margin-left: 15px;
+  border: none;
 }
+
+.timezone-label {
+  color: #666;
+}
+
 
 
 /* Media Queries */
@@ -465,7 +541,7 @@ main {
     grid-template-columns: 1fr 1fr;
   }
 
-  .main-header, .traffic, .social-container {
+  .main-header, .traffic, .social-container, .alert {
     grid-column: 1 / span 2;
   }
 
@@ -503,5 +579,25 @@ main {
     flex-basis: 30%;
   }
 
+  .widget-container-full {
+    width: 90vw;
+  }
+
+  .widget-container-half {
+    width: 45vw;
+  }
+
+  #notifications {
+    right: 17%;
+  }
+
+
+}
+
+@media (min-width: 1024px) {
+
+  #notifications {
+    right: 15%;
+  }
 
 }

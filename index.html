@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YourApp Dashboard</title>
     <link rel="stylesheet" href="css/normalize.css">
     <script src="https://kit.fontawesome.com/0563c194c2.js" crossorigin="anonymous"></script>
@@ -25,24 +26,23 @@
           </g>
         </svg>
         <div class="new-notification"></div>
-        <div id="notifications">
-          <!-- Notifications will populate here -->
-        </div>
+
       </div>
       <img src="images/profilepic.jpg" alt="A portrait picture of myself, Josh Suson" class="profile-image">
+      <div id="notifications"></div>
       <h3>Josh Suson</h3>
     </header>
     <nav>
-      <a href="#">
+      <a href="#dashboard">
         <img src="icons/icon-dashboard.svg" alt="A Dashboard Icon" class="nav-icon">
       </a>
-      <a href="#">
-        <img src="icons/icon-members.svg" alt="A Members Icon" class="nav-icon">
-      </a>
-      <a href="#">
+      <a href="#visits">
         <img src="icons/icon-visits.svg" alt="A Visits Stats Icon" class="nav-icon">
       </a>
-      <a href="#">
+      <a href="#memberSection">
+        <img src="icons/icon-members.svg" alt="A Members Icon" class="nav-icon">
+      </a>
+      <a href="#settingsSection">
         <img src="icons/icon-settings.svg" alt="A Settings Icon" class="nav-icon">
       </a>
     </nav>
@@ -63,14 +63,14 @@
       </div>
 
       <!-- Chart Area -->
-      <section class="traffic">
+      <section class="traffic" id="dashboard">
         <div class="traffic-header">
           <h3 class="section-title">Traffic</h3>
           <ul class="traffic-nav">
-            <li class="traffic-nav-link">Hourly</li>
-            <li class="traffic-nav-link">Daily</li>
-            <li class="traffic-nav-link active">Weekly</li>
-            <li class="traffic-nav-link">Monthly</li>
+            <li id="hourly" class="traffic-nav-link">Hourly</li>
+            <li id="daily" class="traffic-nav-link">Daily</li>
+            <li id="weekly" class="traffic-nav-link active">Weekly</li>
+            <li id="monthly" class="traffic-nav-link">Monthly</li>
           </ul>
           </div>
           <div class="widget-container-full">
@@ -80,7 +80,7 @@
       </section>
 
       <!-- Daily Traffic Bar Graph -->
-      <section class="daily">
+      <section class="daily" id="visits">
         <h3 class="section-title">Daily Traffic</h3>
         <div class="widget-container-half">
           <!-- element bar graph will attach to -->
@@ -163,7 +163,7 @@
         </div>
       </div>
       <!-- New Members Widget -->
-      <section class="members">
+      <section class="members" id="memberSection">
         <h3 class="section-title">New Members</h3>
         <div class="members-container">
           <img src="images/member-1.jpg" alt="Victoria's Profile Picture" class="profile-image member-image">
@@ -248,7 +248,7 @@
       </section>
 
         <!-- Messages Widget -->
-        <section class="message">
+        <section class="message" id="settingsSection">
           <h3 class="section-title">Message User</h3>
           <form class="widget-container">
             <input type="text" placeholder="Search for User" class="form-field" id="userField">
@@ -262,7 +262,7 @@
             <h3 class="section-title">Settings</h3>
             <!-- Custom CSS Toggle Code -->
             <label class="switch-light switch-ios" onclick="">
-              <input type="checkbox">
+              <input type="checkbox" id="emailButton">
 
               <strong>
                 Send E-mail Notifications
@@ -278,7 +278,7 @@
             </label>
             <!-- Custom CSS Toggle Code -->
             <label class="switch-light switch-ios" onclick="">
-              <input type="checkbox">
+              <input type="checkbox" id="profileButton">
 
               <strong>
                 Set Profile to Public
@@ -290,6 +290,7 @@
                 <a></a>
               </span>
             </label>
+            <label class="timezone-label">Select a Timezone:</label>
             <select class="form-field" id="timezone">
               <option disabled selected>Select A Timezone</option>
               <option>Eastern</option>
@@ -303,5 +304,8 @@
             </div>
           </section>
     </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
