@@ -266,3 +266,15 @@ if (localStorage.profileStorage === "true") {
 } else if (localStorage.profileStorage === "false") {
   profileButton.checked = false;
 }
+
+// Autocomplete Feature for User search
+const userField = document.getElementById('userField');
+const userNames = [
+  'Victoria Chambers',
+  'Dale Byrd',
+  'Dawn Wood',
+  'Dan Oliver'];
+
+new Autofill(userField, {
+  list: userNames
+});

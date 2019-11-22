@@ -440,6 +440,43 @@ main {
   border: none;
 }
 
+.visually-hidden {
+  display: none;
+}
+
+.autofill {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+.autofill>ul {
+  background: #fff;
+  position: absolute;
+  list-style: none;
+  border-radius: 5px;
+  border: 1px solid #bbb;
+  z-index: 1000;
+  top: 65%;
+  margin: 0;
+  padding: 5px;
+}
+
+.autofill>ul>li {
+  padding: 5px;
+  color: #666;
+}
+
+.autofill>ul>li:hover {
+  cursor: pointer;
+}
+
+mark {
+  background: none;
+  color: #666;
+  font-weight: 600;
+}
+
 /* Settings Styles */
 
 .settings {
