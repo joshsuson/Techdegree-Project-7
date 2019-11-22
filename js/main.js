@@ -32,10 +32,10 @@ alertBanner.innerHTML =
       const li = document.querySelectorAll('.traffic-nav-link');
       for (let i = 0; i < li.length; i++) {
         if (li[i] === e.target) {
-          continue
+          continue;
         } else {
           li[i].classList.remove('active');
-        };
+        }
       }
     }
   });
@@ -118,7 +118,7 @@ trafficNav.addEventListener('click', e => {
 
 
 // Daily chart
-const dailyCanvas = document.getElementById('daily-chart')
+const dailyCanvas = document.getElementById('daily-chart');
 
 const dailyData = {
   labels: ["S", "M", "T", "W", "T", "F", "S"],
@@ -174,7 +174,7 @@ const mobileOptions = {
       fontStyle: 'bold'
     }
   }
-}
+};
 
 let mobileChart = new Chart(mobileCanvas, {
   type: 'doughnut',
@@ -195,7 +195,7 @@ send.addEventListener('click', () => {
   } else if (message.value === "") {
     alert("Please fill out message field before sending");
   } else {
-    alert(`Message successfully sent to: ${user.value}`)
+    alert(`Message successfully sent to: ${user.value}`);
   }
 });
 
