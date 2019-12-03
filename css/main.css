@@ -15,7 +15,7 @@
 }
 
 .widget-container-full, .widget-container-half {
-  width: 95vw;
+  width: calc(95vw - 40px);
 }
 
 
@@ -84,10 +84,9 @@ header span {
 
 #notifications {
   position: absolute;
-  background: #fff;
+  background: #eaeaea;
   top: 7%;
-  right: -5%;
-  border: solid 1px #666;
+  right: 0;
   z-index: 1000;
 }
 
@@ -216,12 +215,13 @@ main {
 
 .traffic-header {
   display: flex;
+  flex-direction: column;
   padding: 10px 0;
 }
 
 .traffic-nav {
   display: flex;
-  margin-left: auto;
+  padding: 0;
   list-style: none;
 }
 
@@ -271,7 +271,6 @@ main {
   width: auto;
   background: #7479ba;
   border-radius: 50%;
-  /* padding: 10px; */
 }
 
 .social-image path {
@@ -286,7 +285,7 @@ main {
   margin: 5px;
   border: solid 1px #bbb;
   display: flex;
-  min-width: 299px;
+  width: 268px;
 }
 
 .social-image {
@@ -617,15 +616,23 @@ mark {
   }
 
   .widget-container-full {
-    width: 90vw;
+    width: calc(90vw - 40px);
   }
 
   .widget-container-half {
-    width: 45vw;
+    width: calc(45vw - 40px);
   }
 
   #notifications {
     right: 17%;
+  }
+
+  .traffic-header {
+    flex-direction: row;
+  }
+
+  .traffic-nav {
+    margin-left: auto;
   }
 
 
